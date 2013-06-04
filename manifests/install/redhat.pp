@@ -15,8 +15,8 @@ class passenger::install::redhat {
   package{'passenger':
     ensure  => installed,
     name    => 'mod_passenger',
-    require => Class['apache::install'],
-    before  => Class['apache::service'],
+    require => Package['httpd'],
+    before  => Service['httpd'],
   }
 
 }
